@@ -19,4 +19,14 @@ sed -i 's/"device": "eth0"/"device": "br-lan"/g' /etc/board.json
 # Remove target-specific APK feed (msm89xx is not on downloads.openwrt.org)
 sed -i '\|/targets/msm89xx/msm8916/packages|d' /etc/apk/repositories.d/distfeeds.list 2>/dev/null || true
 
+# Add default modem configuration for luci-app-modemdata
+uci add defmodems defmodems
+uci set defmodems.@defmodems[-1].modem='qualcomm'
+uci set defmodems.@defmodems[-1].modemdata='mm'
+uci set defmodems.@defmodems[-1].comm_port='/org/freedesktop/ModemManager1/Modem/0'
+uci set defmodems.@defmodems[-1].comm_mm='/org/freedesktop/ModemManager1/Modem/0'
+uci set defmodems.@defmodems[-1].forced_plmn='0'
+uci set defmodems.@defmodems[-1].forced_plmn_mm='0'
+uci set defmodems.@defmodems[-1].network='modem'
+
 uci commit

@@ -1,3 +1,9 @@
 [submodule "packages/luci-app-sms-manager"]
 	path = packages/luci-app-sms-manager
 	url = https://github.com/4IceG/luci-app-sms-manager.git
+[submodule "packages/luci-app-modemdata"]
+	path = packages/luci-app-modemdata
+	url = https://github.com/4IceG/luci-app-modemdata.git
+[submodule "packages/modemdata"]
+	path = packages/modemdata
+	url = https://github.com/obsy/modemdata.git
