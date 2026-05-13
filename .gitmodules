@@ -1,0 +1,3 @@
+[submodule "packages/luci-app-sms-manager"]
+	path = packages/luci-app-sms-manager
+	url = https://github.com/4IceG/luci-app-sms-manager.git
